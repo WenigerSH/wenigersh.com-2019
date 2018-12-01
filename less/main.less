@@ -1,0 +1,242 @@
+@mobileSpacing: 30px;
+
+@font-face {
+    font-family: 'Brandon Black';
+    src: url('../fonts/brandon_blk-webfont.woff') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Brandon Light';
+    src: url('../fonts/brandon_light-webfont.woff') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    &,
+    &:after,
+    &:before {
+        box-sizing: border-box;
+    }
+}
+
+strong {
+    font-family: 'Brandon Black', sans-serif;
+}
+
+html,
+body {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    text-rendering: optimizeLegibility;
+    font-smoothing: antialiased;
+}
+
+.page-wrapper {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+html {
+    font-family: 'Brandon Light', sans-serif;
+    font-size: 18px;
+    line-height: 24px;
+}
+
+img {
+    display: block;
+}
+
+.container {
+    width: 1180px;
+    max-width: 100%;
+    margin: 0 auto;
+
+    @media (max-width: 1180px) {
+        padding: 0 30px;
+    }
+
+    @media (max-width: 768px) {
+        padding: 0 100px;
+    }
+
+    @media (max-width: 415px) {
+        padding: 0 @mobileSpacing;
+    }
+}
+
+a {
+    color: #000;
+    text-decoration: underline;
+}
+
+p {
+    margin: 0;
+
+    + p {
+        margin-top: 24px;
+    }
+}
+
+.main-columns-wrapper {
+    margin-bottom: 120px;
+    display: grid;
+    grid-template-columns: 280px 280px 380px;
+    grid-column-gap: 120px;
+
+    @media (max-width: 1180px) {
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-column-gap: 60px;
+    }
+
+    .content-column {
+        @media (max-width: 415px) {
+            + .content-column {
+                margin-top: 80px;
+            }
+        }
+
+        .content-column-header {
+            margin-bottom: 34px;
+            font-size: 36px;
+            line-height: 48px;
+
+            strong {
+                display: block;
+                font-size: 72px;
+                line-height: 70px;
+            }
+        }
+    }
+
+    @media (max-width: 768px) {
+        display: flex;
+        flex-direction: column;
+    }
+
+    @media (max-width: 415px) {
+        margin-bottom: @mobileSpacing;
+    }
+}
+
+.main-header {
+    padding: 85px 0 81px;
+}
+
+.offers-list {
+    padding-left: 0;
+
+    li {
+        display: flex;
+        list-style: none;
+
+        &:before {
+            content: '';
+            display: inline-block;
+            min-width: 30px;
+            height: 27px;
+            margin: 0 15px auto 0;
+            background: url('../img/icon-tick.svg') no-repeat center;
+            background-size: 100%;
+        }
+
+        + li {
+            margin-top: 24px;
+        }
+    }
+}
+
+.download-wrapper {
+    margin-top: 48px;
+}
+
+.ceo-wrapper {
+    display: flex;
+    margin: 60px 0 0;
+    padding: 0;
+
+    figcaption {
+        margin: auto auto auto 25px;
+
+        span {
+            display: block;
+
+            + span {
+                margin-top: 10px;
+            }
+        }
+
+        .name {
+            display: block;
+            font-size: 24px;
+        }
+
+        .description {
+            color: #959595;
+        }
+    }
+}
+
+.contact-details {
+    margin-top: 34px;
+    padding-left: 0;
+
+    li {
+        list-style: none;
+        font-size: 24px;
+        line-height: 48px;
+
+        a {
+            display: flex;
+            align-items: flex-start;
+            text-decoration: none;
+            font-family: 'Brandon Black', sans-serif;
+
+            img {
+                margin: auto 13px auto 0;
+            }
+        }
+    }
+}
+
+.main-footer {
+    margin: auto 0 0;
+    height: 140px;
+    background: #f3f3f3;
+
+    @media (max-width: 768px) {
+        height: auto;
+        padding: 50px 80px;
+    }
+
+    @media (max-width: 415px) {
+        padding: @mobileSpacing;
+    }
+
+    .logos-wrapper {
+        height: 140px;
+        display: flex;
+        margin: 0 0 0 45px;
+        padding: 0;
+        align-items: flex-start;
+
+        @media (max-width: 768px) {
+            height: auto;
+            margin: 0;
+        }
+
+        li {
+            list-style: none;
+            margin: auto;
+
+            &:first-of-type {
+                margin-left: 0;
+            }
+        }
+    }
+}
