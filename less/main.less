@@ -244,8 +244,21 @@ p {
             list-style: none;
             margin: auto 0 auto 80px;
 
+
+
             img {
+                transition: opacity 0.2s ease-out, filter 0.2s ease-out;
+            }
+
+            a {
                 margin: auto;
+                
+                &:hover {
+                    img {
+                        filter: grayscale(100%);
+                        opacity: 0.7;
+                    }
+                }
             }
 
             &:first-of-type {

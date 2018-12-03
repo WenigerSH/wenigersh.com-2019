@@ -245,7 +245,18 @@ p + p {
   margin: auto 0 auto 80px;
 }
 .main-footer .logos-wrapper li img {
+  -webkit-transition: opacity 0.2s ease-out, -webkit-filter 0.2s ease-out;
+  transition: opacity 0.2s ease-out, -webkit-filter 0.2s ease-out;
+  transition: opacity 0.2s ease-out, filter 0.2s ease-out;
+  transition: opacity 0.2s ease-out, filter 0.2s ease-out, -webkit-filter 0.2s ease-out;
+}
+.main-footer .logos-wrapper li a {
   margin: auto;
+}
+.main-footer .logos-wrapper li a:hover img {
+  -webkit-filter: grayscale(100%);
+          filter: grayscale(100%);
+  opacity: 0.7;
 }
 .main-footer .logos-wrapper li:first-of-type {
   margin-left: 0;
